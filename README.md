@@ -104,9 +104,9 @@ Function multmatfordiv(mat1 As Variant, mat2 As Variant) As Variant
 
 Function WriteArrayToImmediateWindow(arrSubA As Variant)
 '   borrowed this function from https://stackoverflow.com/questions/14274949/how-to-print-two-dimensional-array-in-immediate-window-in-vba
-'   made some modifications to get it to display all arrays properly
+'   Made some modifications to get it to display all arrays properly
 
 Function WriteArraydiv(arrSubA As Variant)
 '   borrowed this function from https://stackoverflow.com/questions/14274949/how-to-print-two-dimensional-array-in-immediate-window-in-vba
-'   made some modifications to get it to display all arrays properly
+'   Made some modifications to get it to display all arrays properly
 '   Seperate from other array printing function due to debugging issues I was having early in the coding process with the division function
