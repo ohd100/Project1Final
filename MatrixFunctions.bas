@@ -34,11 +34,6 @@ Function addmatrix(mat1 As Variant, mat2 As Variant) As Variant
         j = 0
     Loop
       
-'    print input and results to immediate window
-'    For i = 0 To 5
-'    Debug.Print mat1(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5) & vbTab * z(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5)
-'    Next i
-'
     addmatrix = z
     
 
@@ -114,11 +109,6 @@ Sub runaddmatrix()
    ReDim z(mat1row, mat1col)
    
    z = addmatrix(mat1, mat2)
-      
-    ''print input and results to immediate window
-'  For i = 0 To 5
-'    Debug.Print z(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5) & vbTab & "///"
-'    Next
         
 Debug.Print WriteArrayToImmediateWindow(mat1)
 Debug.Print WriteArrayToImmediateWindow(mat2)
@@ -156,11 +146,7 @@ Function subtmatrix(mat1 As Variant, mat2 As Variant) As Variant
         j = 0
     Loop
       
-'    print input and results to immediate window
-'    For i = 0 To 5
-'    Debug.Print mat1(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5) & vbTab * z(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5)
-'    Next i
-'
+
     subtmatrix = z
     
 
@@ -236,11 +222,6 @@ Sub runsubtmatrix()
    ReDim z(mat1row, mat1col)
    
    z = subtmatrix(mat1, mat2)
-      
-    ''print input and results to immediate window
-'  For i = 0 To 5
-'    Debug.Print z(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5) & vbTab & "///"
-'    Next
         
 Debug.Print WriteArrayToImmediateWindow(mat1)
 Debug.Print WriteArrayToImmediateWindow(mat2)
@@ -319,11 +300,7 @@ Function multmatrix(mat1row As Integer, mat1col As Integer, mat2row As Integer, 
         j = 0
     Loop
       
-'    print input and results to immediate window
-'    For i = 0 To 5
-'    Debug.Print mat1(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5) & vbTab * z(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5)
-'    Next i
-'
+
     multmatrix = z
     
 
@@ -336,18 +313,6 @@ Function multmatrix(mat1row As Integer, mat1col As Integer, mat2row As Integer, 
     m1col = 3
     mat2row = 3
     mat2col = 1
-'   Dim z() As Long
-'   Dim iA As Long, jA As Long
-'
-'   ReDim z(mat1row, mat2col)
-'
-'   z = multmatrix(Int(mat1row), Int(m1col), Int(mat2row), Int(mat1col))
-'
-'    ''print input and results to immediate window
-'
-'    Debug.Print z(0, 0) & vbTab & z(0, 1) & vbTab & z(0, 2)
-'    Debug.Print z(1, 0) & vbTab & z(1, 1) & vbTab & z(1, 2)
-'    Debug.Print z(2, 0) & vbTab & z(2, 1) & vbTab & z(2, 2)
  
     Dim mat1() As Long
     Dim mat2() As Long
@@ -404,11 +369,6 @@ Function multmatrix(mat1row As Integer, mat1col As Integer, mat2row As Integer, 
    
    z = mult2matrix(mat1, mat2)
 
-
-'Debug.Print z(0, 0)
-'Debug.Print z(1, 0)
-
-
     Debug.Print WriteArrayToImmediateWindow(mat1)
     Debug.Print WriteArrayToImmediateWindow(mat2)
     Debug.Print WriteArrayToImmediateWindow(z)
@@ -420,16 +380,11 @@ End Sub
 Function divmatrix(mat1 As Variant, mat2 As Variant) As Variant
    
    mat2row = UBound(mat2, 1)
-   'mat1col = UBound(mat1, 2)
    mat2col = UBound(mat2, 2)
-'
-'   a = mat1row
-'   d = mat2col
-'   l = mat1col
-'
+
    i = 0
    j = 0
-'   l = 0
+
    
    Dim mat2inv() As Variant
    mat2inv = Application.MInverse(mat2)
@@ -445,17 +400,8 @@ Function divmatrix(mat1 As Variant, mat2 As Variant) As Variant
                 j = 0
             Loop
       
-'    print input and results to immediate window
-'    For i = 0 To 5
-'    Debug.Print mat1(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5) & vbTab * z(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5)
-'    Next i
-'
 
-   '     divmatrix = m2invexp
    divmatrix = multmatfordiv(mat1, m2invexp)
-  '  Debug.Print WriteArraydiv(m2invexp)
-   ' Debug.Print WriteArraydiv(mat2)
-  '  Debug.Print WriteArraydiv(mat2inv)
 
 
     End Function
@@ -468,18 +414,6 @@ Function divmatrix(mat1 As Variant, mat2 As Variant) As Variant
     m1col = 4
     mat2row = 4
     mat2col = 4
-'   Dim z() As Long
-'   Dim iA As Long, jA As Long
-'
-'   ReDim z(mat1row, mat2col)
-'
-'   z = multmatrix(Int(mat1row), Int(m1col), Int(mat2row), Int(mat1col))
-'
-'    ''print input and results to immediate window
-'
-'    Debug.Print z(0, 0) & vbTab & z(0, 1) & vbTab & z(0, 2)
-'    Debug.Print z(1, 0) & vbTab & z(1, 1) & vbTab & z(1, 2)
-'    Debug.Print z(2, 0) & vbTab & z(2, 1) & vbTab & z(2, 2)
  
     Dim mat1() As Variant
     Dim mat2() As Variant
@@ -530,19 +464,9 @@ Function divmatrix(mat1 As Variant, mat2 As Variant) As Variant
     solrow = a
     solcol = d
 
-'mat2(0, 0) = 4
-'mat2(0, 1) = 7
-'mat2(1, 0) = 2
-'mat2(1, 1) = 6
-
-
   ReDim z(a, d)
    
    z = divmatrix(mat1, mat2)
-
-
-'Debug.Print z(0, 0)
-'Debug.Print z(1, 0)
 
 
     Debug.Print WriteArraydiv(mat1)
@@ -582,11 +506,6 @@ Function multmatfordiv(mat1 As Variant, mat2 As Variant) As Variant
         j = 0
     Loop
       
-'    print input and results to immediate window
-'    For i = 0 To 5
-'    Debug.Print mat1(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5) & vbTab * z(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5)
-'    Next i
-'
    multmatfordiv = z
     
 
@@ -668,12 +587,12 @@ Sub testdivmat()
         Dim amat() As Variant
         Dim amatinv() As Variant
         ReDim amat(1, 1)
-        'ReDim amatinv(1, 1)
+    
         amat(0, 0) = 4
         amat(0, 1) = 7
         amat(1, 0) = 2
         amat(1, 1) = 6
-        'ReDim amatinv(1, 1)
+     
         amatinv = divmatrix(amat, amat)
         
         
@@ -711,11 +630,7 @@ Sub testdivmat()
         j = 0
     Loop
       
-'    print input and results to immediate window
-'    For i = 0 To 5
-'    Debug.Print mat1(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5) & vbTab * z(i, 0) & vbTab & z(i, 1) & vbTab & z(i, 2) & vbTab & z(i, 3) & vbTab & z(i, 4) & vbTab & z(i, 5)
-'    Next i
-'
+
    mult2matrix = z
     
 
